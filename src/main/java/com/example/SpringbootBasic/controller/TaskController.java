@@ -26,10 +26,17 @@ public class TaskController {
         return service.create(t);
     }
 
+    @PatchMapping("/{id}/entregar")
+    public Task entregar(@PathVariable Long id) {
+        return service.marcarEntregada(id);
+    }
+
+
     @GetMapping("/{id}")
     public Task getById(@PathVariable Long id) {
         return service.findById(id);
     }
+
 }
 
 
